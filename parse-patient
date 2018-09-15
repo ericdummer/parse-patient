@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+/**
+ * Created by PhpStorm.
+ * User: ericdummer
+ * Date: 9/12/18
+ * Time: 7:47 PM
+ */
+
+
+/**
+ *  Normally I would rely on some autoloaders
+ */
+include __DIR__ . "/extractors/Factory.php";
+include __DIR__ . "/extractors/JsonExtract.php";
+include __DIR__ . "/extractors/XmlExtract.php";
+
+$type = $argv[1];
+$path = $argv[2];
+
+
+$extractor = Factory::getByType($type);
+$extractor->setFilePath($path);
+$result = $extractor->extract();
+print_r("Results for format: " . $type . "\n");
+print_r($result);
+echo "\n";
+
+
+
+
+
