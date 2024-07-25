@@ -1,3 +1,6 @@
+# Parse Patient
+Written for a job interview in September of 2018
+
 #Notes:
 
 1. to run using the provided files: `php run.php`
